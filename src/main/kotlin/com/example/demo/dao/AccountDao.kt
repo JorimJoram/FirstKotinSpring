@@ -12,7 +12,7 @@ import java.util.Optional
 @Repository
 @RequiredArgsConstructor
 class AccountDao(@Autowired val jdbcTemplate: JdbcTemplate) {
-    fun findByUsername(id: String): Optional<UserDto> {
+    fun findByUsername(id: String?): Optional<UserDto> {
         val sql = "SELECT * FROM USER_INFO WHERE USER_ID = ?"
 
         var userDto: UserDto?

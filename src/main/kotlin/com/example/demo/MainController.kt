@@ -14,12 +14,21 @@ import java.time.LocalDateTime
 class MainController(private val accountService: AccountService) {
 
     @GetMapping("/index")
-    fun mainPage(model:Model): String {
+    fun mainPage(model: Model): String {
         val person = Person("JorimJoram", 26, LocalDateTime.now())
         val user = accountService.findByUsername("test")
-        println(user.toString())
         model.addAttribute("person", person)
+        model.addAttribute("user", user.get())
         return "test"
     }
 
+    @GetMapping("/login")
+    fun loginPage(): String {
+        return "login"
+    }
+
+    @GetMapping("/success")
+    fun successLoginPage(): String {
+        return "success"
+    }
 }

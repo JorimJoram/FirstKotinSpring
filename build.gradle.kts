@@ -34,6 +34,7 @@ dependencies {
 
 	implementation("org.apache.tomcat.embed:tomcat-embed-jasper")
 
+	implementation("org.springframework.boot:spring-boot-starter-security")
 
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
