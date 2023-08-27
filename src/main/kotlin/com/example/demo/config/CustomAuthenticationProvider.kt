@@ -1,6 +1,6 @@
 package com.example.demo.config
 
-import lombok.RequiredArgsConstructor
+
 import org.springframework.security.authentication.AuthenticationProvider
 import org.springframework.security.authentication.BadCredentialsException
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component
 import javax.servlet.http.HttpSession
 
 @Component
-@RequiredArgsConstructor
+
 class CustomAuthenticationProvider(
     private val passwordEncoder: BCryptPasswordEncoder,
     private val customUserDetailService: CustomUserDetailService,
     private val session:HttpSession
 ): AuthenticationProvider {
     override fun authenticate(authentication: Authentication?): Authentication {
-        val username = authentication?.name;
+        val username = authentication?.name
         val password = authentication?.credentials
 
         val user = customUserDetailService.loadUserByUsername(username)

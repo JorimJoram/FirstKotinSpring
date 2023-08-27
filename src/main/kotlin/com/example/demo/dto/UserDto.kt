@@ -1,8 +1,5 @@
 package com.example.demo.dto
 
-import lombok.Data
-
-@Data
 data class UserDto(
     var id:String?,
     var pw:String?,

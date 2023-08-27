@@ -1,7 +1,7 @@
 package com.example.demo.dao
 
 import com.example.demo.dto.UserDto
-import lombok.RequiredArgsConstructor
+
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
@@ -10,7 +10,7 @@ import java.sql.ResultSet
 import java.util.Optional
 
 @Repository
-@RequiredArgsConstructor
+
 class AccountDao(@Autowired val jdbcTemplate: JdbcTemplate) {
     fun findByUsername(id: String?): Optional<UserDto> {
         val sql = "SELECT * FROM USER_INFO WHERE USER_ID = ?"
@@ -35,6 +35,6 @@ class AccountDao(@Autowired val jdbcTemplate: JdbcTemplate) {
             userDto = null
         }
 
-        return Optional.ofNullable(userDto);
+        return Optional.ofNullable(userDto)
     }
 }

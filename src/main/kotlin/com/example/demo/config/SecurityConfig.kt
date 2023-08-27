@@ -1,6 +1,6 @@
 package com.example.demo.config
 
-import lombok.RequiredArgsConstructor
+
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.AuthenticationManager
@@ -8,10 +8,8 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
-import org.springframework.security.web.DefaultRedirectStrategy
 import org.springframework.security.web.SecurityFilterChain
 
-@RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
 class SecurityConfig(
@@ -20,12 +18,12 @@ class SecurityConfig(
 ) {
     @Bean
     fun passwordEncoder(): BCryptPasswordEncoder {
-        return BCryptPasswordEncoder();
+        return BCryptPasswordEncoder()
     }
 
     @Bean
     fun authenticationManager(configuration: AuthenticationConfiguration): AuthenticationManager {
-        return configuration.authenticationManager;
+        return configuration.authenticationManager
         //Exception 던질 수 있다는 throws를 사용하지 않음
     }
 

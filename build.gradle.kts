@@ -36,10 +36,8 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-security")
 
-	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
 
-	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
