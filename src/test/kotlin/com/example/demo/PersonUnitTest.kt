@@ -43,4 +43,10 @@ class PersonUnitTest(
         println("AFTER DATA UPDATE")
         println(this.personRepository.findById(1))//다시 select 쿼리 수행
     }
+
+    @Test
+    fun deletePerson(){
+        val oData = this.personRepository.findById(1).get()
+        println(this.personRepository.delete(oData))
+    }
 }

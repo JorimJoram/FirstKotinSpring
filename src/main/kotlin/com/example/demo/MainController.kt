@@ -14,9 +14,7 @@ class MainController(private val accountService: AccountService) {
 
     @GetMapping("/index")
     fun mainPage(model: Model): String {
-        //val person = Person("JorimJoram", 26, LocalDateTime.now())
         val user = accountService.findByUsername("test")
-        //model.addAttribute("person", person)
         model.addAttribute("user", user.get())
         return "test"
     }
