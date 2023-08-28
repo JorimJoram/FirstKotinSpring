@@ -1,7 +1,10 @@
 package com.example.demo.dto
 
 import java.time.LocalDateTime
+import javax.persistence.*
 
-data class Person(var name:String,
-                  var age:Int,
-                  var createDate: LocalDateTime)
+@Entity
+data class Person(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id:Long?,
+                  @Column var name:String,
+                  @Column var age:Int,
+                  @Column var createDate: LocalDateTime)

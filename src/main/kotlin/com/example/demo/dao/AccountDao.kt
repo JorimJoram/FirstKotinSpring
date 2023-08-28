@@ -10,7 +10,6 @@ import java.sql.ResultSet
 import java.util.Optional
 
 @Repository
-
 class AccountDao(@Autowired val jdbcTemplate: JdbcTemplate) {
     fun findByUsername(id: String?): Optional<UserDto> {
         val sql = "SELECT * FROM USER_INFO WHERE USER_ID = ?"
